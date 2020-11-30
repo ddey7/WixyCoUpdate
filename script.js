@@ -1,12 +1,13 @@
 //Types js works
 var typed = new Typed(".typedelement", {
-  strings: ["Wixyco.com", "Fastest Growing Software Company"],
+  strings: ["Web Development", "Application Development", "Digital Marketing"],
   typeSpeed: 50,
   loop: true,
-  showCursor: false,
+  showCursor: true,
   backDelay: 1000,
   backSpeed: 50,
   smartBackspace: true,
+
 });
 
 //particle.js
@@ -73,14 +74,19 @@ particlesJS("particles-js", {
 });
 
 //onscroll navbar
-window.onscroll = () => {
-  const navbar = document.querySelector(".navbar");
-  if (this.scrollY <= 10) {
-    navbar.style.backgroundColor = "Transparent";
-  } else {
-    navbar.style.backgroundColor = "#292929";
-  }
-};
+// window.onscroll = () => {
+//   const navbar = document.querySelector(".navbar");
+//   if (this.scrollY <= 10) {
+//     navbar.style.backgroundColor = "Transparent";
+//     navbar.style.boxShadow = "0px 0px 0px 0px";
+//   }
+//   else {
+//     navbar.style.backgroundColor = "#000";
+//     navbar.style.boxShadow = "0px 2px 20px 0px rgba(255,255,255,0.52)";
+//     navbar.style.webkitBoxShadow = "0px 2px 20px 0px rgba(255,255,255,0.52)";
+//     navbar.style.mozBoxShadow = "0px 2px 20px 0px rgba(255,255,255,0.52)";
+//   }
+// };
 
 //Project Div
 //Project Div
@@ -94,9 +100,7 @@ $(".typedelement").tilt({
   scale: 1.5,
 });
 
-$(".brandname").tilt({
-  scale: 1.5,
-});
+
 
 //BRAND TEXT
 const target = window.document.getElementsByClassName("brandname")[0];

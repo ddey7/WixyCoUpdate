@@ -1,84 +1,226 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap');
-
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-family: 'Roboto Slab';
-    background-color: #292929 !important;
-
-}
-
-.intro-2 {
-    background: url("https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30")no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-
-
+    background-color: #111 !important;
 }
 
 /* NAVBAR */
 
-.navlinks,
-.navbrand {
-    font-weight: 600;
-    color: red;
+nav{
+    background-color: transparent !important;
+    position: absolute !important;
+    width: 100%;
+    top: 0;
+    left: 0 ;
+    z-index: 1;
 }
 
-.navlinks::before {
+@media (max-width: 768px) {
+    #navbarSupportedContent{
+        background-color: rgba(0,0,0,0.5); !important;
+    }
+}
+
+.nav-link{
+    color: #aaa;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif !important;
+    font-size: 18px;
+}
+
+.nav-link:hover{
+    color: #fff;
+    transition: 0.5s;
+}
+
+.brandname {
+    font-family: 'Nunito', sans-serif;
+    font-size: 35px !important;
+    letter-spacing: 5px;
+    color: #fff;
+    animation: color1 10s linear infinite;
+    position: relative;
+    cursor: pointer;
+}
+
+.brandname::before{
+    content: "WIXYCO";
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(5px);
+    z-index: -1;
+    animation: color2 10s linear infinite;
+}
+
+.brandname::after{
     content: "";
     position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
+    top: 0;
     left: 0;
-    background-color: rgb(255, 255, 255);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    opacity: .1;
+    filter: blur(30px);
+    animation: color3 10s linear infinite;
 }
 
-.navlinks:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
+@keyframes color1 {
+     0%{
+        text-shadow: 0 0 30px blue;
+    }
+    33.33%{
+        text-shadow: 0 0 30px red;
+    }
+    66.66%{
+        text-shadow: 0 0 30px #01c709;
+    }
+    100%{
+        text-shadow: 0 0 30px blue;
+    }
 }
 
-
-.navbaritems {
-    margin: 0 10px;
+@keyframes color2 {
+    0%{
+        color: blue;
+    }
+    33.33%{
+        color: red;
+    }
+    66.66%{
+        color: #01c709;
+    }
+    100%{
+        color: blue;
+    }
 }
 
-
-.navbar-brand {
-    /* font-family: sans-serif; */
-    font-weight: 800;
-    font-size: xx-large;
+@keyframes color3 {
+    0%{
+        background-color:  blue;
+    }
+    33.33%{
+        background-color:  red;
+    }
+    66.66%{
+        background-color:  #01c709;
+    }
+    100%{
+        background-color:  blue;
+    }
 }
-
 
 /* NAVBAR */
 
-html,
-body,
-header {
-    height: 100%;
+/*head div with bg*/
+
+.view{
+    height: 95vh;
+    -webkit-clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%);
+    clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%);
+    background-image: url("img/head_bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*background: url("https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30")no-repeat center center;*/
+    background-size: cover;
+    position: relative;
+    top: -10;
+    left: 0;
 }
 
-.view {
-    height: 100vh;
+.view h1{
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+
 }
 
-.headinglines {
-    line-height: 25px;
-    font-size: larger;
+.view p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
+
+.view h2{
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+}
+
+.view h5{
+    font-family: 'Lato', sans-serif;
+    font-size:18px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .view h1{
+        font-size: 40px;
+    }
+    .view h2{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .view h1{
+        font-size: 30px;
+    }
+    .view h2{
+        font-size: 20px;
+    }
+    .view p{
+        font-size: 15px;
+    }
+    .view h5{        
+        font-size:16px;
+        line-height: 25px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .view h1{
+        font-size: 25px;
+    }
+    .view h2{
+        font-size: 18px;
+    }
+    .view p{
+        font-size: 14px;
+    }
+    .view h5{        
+        font-size:15px;
+        line-height: 25px;
+        letter-spacing: 1px;
+    }
+}
+
+/*head div with bg*/
+
+/*service*/
 
 .servicecards {
     /* height: 250px; */
     background: transparent !important;
     border-radius: 15px !important;
-    /* border: 1px solid rgba(99, 99, 99, 0.247); */
+    border: 1px solid #ddd;
+
+}
+
+.servicecards h1{
+    color: #fff;
+    font-size: 30px;
+    text-shadow: 0 0 30px blue;
+    letter-spacing: 1px;
+    font-family: 'Josefin Sans', sans-serif !important;
+    text-transform: uppercase;
+}
+
+.servicecards p, .txt_des{
+    color: #ccc;
+    font-family: 'Lato', sans-serif;
+    word-spacing: 2px;
+    line-height: 30px;
+    text-align: justify;
 }
 
 .servicesicons {
@@ -86,283 +228,119 @@ header {
     width: 200px !important;
 }
 
-#Services {
-    background: transparent;
-    color: #f3f3f3;
-}
+/*service*/
 
 
-.icons:hover {
-    transition: transform 1s ease-in-out;
-    transform: scale3d(2.0, 2.0, 2.0);
-    position: relative;
-    bottom: -20px;
-}
+/*text neon*/
 
-.fa-mobile-alt:hover {
-    position: relative;
-    top: -50px;
-}
-
-/* particle.js */
-/* ---- reset ---- */
-
-
-/* ---- particles.js container ---- */
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-}
-
-/* particle.js */
-
-/* Services Div */
-.servicediv {
-    height: 100vh;
-}
-
-/* Services Div */
-
-/* Project DIv */
-/***** Sadie *****/
-/*---------------*/
-.grid {
-    position: relative;
-    /* margin: auto; */
-    display: flex;
-    /* padding: 1em 0 4em; */
-    /* max-width: 1000px; */
-    /* list-style: none; */
-    text-align: center;
-
-}
-
-.projectdiv {
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-        5px 5px 15px rgba(0, 0, 0, 0.3),
-        -5px -5px 15px rgba(255, 255, 255, 0.1);
-    padding: 20px 20px 10px 20px;
-    border-radius: 10px;
-}
-
-@media only screen and (max-width:768px) {
-    .grid {
-        display: block;
-    }
-
-    .navbar {
-        background-color: #292929 !important;
-    }
-
-    .navbaritems {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-}
-
-@media only screen and (min-width:768px) and (max-width:991px) {
-    .grid {
-        display: block;
-    }
-
-    .navbar {
-        background-color: #292929 !important;
-    }
-
-    .navbaritems {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-}
-
-/* Common style */
-.grid figure {
-    border-radius: 10px !important;
-    position: relative;
-    /* float: left; */
-    overflow: hidden;
-    /* margin: 10px 1%; */
-    /* min-width: 320px; */
-    /* max-width: 480px; */
-    display: flex;
-    /* max-height: 360px; */
-    /* width: 48%; */
-    /* background: #3085a3; */
-    text-align: center;
-    cursor: pointer;
-}
-
-.grid figure img {
-    position: relative;
-    display: block;
-    min-height: 100%;
-    max-width: 100%;
-    opacity: 0.8;
-}
-
-.grid figure figcaption {
-    padding: 2em;
+#Services .head_text {
     color: #fff;
-    text-transform: uppercase;
-    font-size: 1.25em;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.grid figure figcaption::before,
-.grid figure figcaption::after {
-    pointer-events: none;
-}
-
-.grid figure figcaption,
-.grid figure figcaption>a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* .grid figure figcaption>a {
-    z-index: 1000;
-    text-indent: 200%;
-    white-space: nowrap;
-    font-size: 0;
-    opacity: 0;
-} */
-
-.grid figure h2 {
-    word-spacing: -0.15em;
-    font-weight: 700;
-}
-
-.grid figure h2 span {
-    font-weight: 800;
-}
-
-.grid figure h2,
-.grid figure p {
-    margin: 0;
-}
-
-.grid figure p {
-    letter-spacing: 1px;
-    font-size: 68.5%;
-}
-
-figure.effect-sadie figcaption::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: -webkit-linear-gradient(top, rgba(72, 76, 97, 0) 0%, rgba(72, 76, 97, 0.8) 75%);
-    background: linear-gradient(to bottom, rgba(72, 76, 97, 0) 0%, rgba(72, 76, 97, 0.8) 75%);
-    content: '';
-    opacity: 0;
-    -webkit-transform: translate3d(0, 50%, 0);
-    transform: translate3d(0, 50%, 0);
-}
-
-figure.effect-sadie h2 {
-    position: absolute;
-    top: 80%;
-    left: 0;
-    width: 100%;
-    color: #f0f0f0;
-    -webkit-transition: -webkit-transform 0.35s, color 0.35s;
-    transition: transform 0.35s, color 0.35s;
-    -webkit-transform: translate3d(0, -50%, 0);
-    transform: translate3d(0, -50%, 0);
-}
-
-figure.effect-sadie figcaption::before,
-figure.effect-sadie p {
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-}
-
-figure.effect-sadie p {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 2em;
-    width: 100%;
-    opacity: 0;
-    -webkit-transform: translate3d(0, 10px, 0);
-    transform: translate3d(0, 10px, 0);
-}
-
-figure.effect-sadie:hover h2 {
-    color: #fff;
-    -webkit-transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
-    transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
-}
-
-figure.effect-sadie:hover figcaption::before,
-figure.effect-sadie:hover p {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-/*---------------*/
-/* Project DIv */
-
-
-/* BRAND TEXT */
-/* @font-face {
-    font-family: neon;
-    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
-} */
-
-.typedelement {
-    position: relative;
-    display: block;
-    font-size: 3vw;
-    color: #FF1177;
-    font-family: 'Roboto Slab';
-    /* -webkit-animation: neon1 1.5s ease-in-out infinite alternate; */
-    /* -moz-animation: neon1 1.5s ease-in-out infinite alternate; */
-    /* animation: neon1 1.5s ease-in-out infinite alternate; */
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 90px #FF1177, 0 0 100px #FF1177;
-}
-
-.typedelement:hover {
-    color: #FF1177;
-    -webkit-animation: none;
-    -moz-animation: none;
-    animation: none;
-
-}
-
-/* 
-@keyframes neon1 {
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 90px #FF1177, 0 0 100px #FF1177;
-    }
-
-    to {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-    }
-} */
-/* BRAND TEXT */
-
-
-/* BRANDNAV */
-@import url('https://fonts.googleapis.com/css?family=Monoton');
-
-.brandname {
-    font-family: 'Monoton' !important;
-    font-size: 35px;
+    background:transparent;
+    text-shadow: 0 0 3px #fff;
     font-weight: bold;
+    font-family: Arial;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+#Services .neon-wrapper {
+    display: inline-flex;
+    filter: brightness(200%);
+    overflow: hidden;
 }
 
+#Services .head_text::before {
+    content: attr(data-text);
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: blur(1px);
+}
+
+
+
+/*text neon*/
+
+/*life cycle*/
+
+#life_cycle{
+    background-image: url("img/life-cycle.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#life_cycle h5{
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+#life_cycle p{
+    letter-spacing: 1px;
+    font-family: 'Josefin Sans', sans-serif !important;
+    color: #f0ad4e;
+}
+
+
+#life_cycle .head_text {
+    color: #fff;
+    background:transparent;
+    text-shadow: 0 0 2px #fff;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+#life_cycle .neon-wrapper {
+    display: inline-flex;
+    filter: brightness(200%);
+    overflow: hidden;
+}
+
+#life_cycle .head_text::before {
+    content: attr(data-text);
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: blur(1px);
+}
+
+@media (max-width: 992px) {
+    #life_cycle .head_text {
+    text-shadow: 0 0 2px #fff;
+    font-size: 30px;
+}
+}
+
+@media (max-width: 768px) {
+    #life_cycle .head_text {
+    text-shadow: 0 0 2px #fff;
+    font-size: 30px;
+}
+}
+
+
+
+/*life cycle*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*navbar tub light*/
 
 @-webkit-keyframes text-flicker-in-glow {
     0% {
@@ -391,7 +369,7 @@ figure.effect-sadie:hover p {
 
     20.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .25)
+        
     }
 
     20.6% {
@@ -406,12 +384,10 @@ figure.effect-sadie:hover p {
 
     30.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     30.5% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     30.6% {
@@ -426,17 +402,14 @@ figure.effect-sadie:hover p {
 
     45.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     50% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     55% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     55.1% {
@@ -451,12 +424,10 @@ figure.effect-sadie:hover p {
 
     57.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35)
     }
 
     60% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35)
     }
 
     60.1% {
@@ -471,12 +442,10 @@ figure.effect-sadie:hover p {
 
     65.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     75% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     75.1% {
@@ -491,12 +460,10 @@ figure.effect-sadie:hover p {
 
     77.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .4), 0 0 110px rgba(255, 255, 255, .2), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     85% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .4), 0 0 110px rgba(255, 255, 255, .2), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     85.1% {
@@ -511,12 +478,10 @@ figure.effect-sadie:hover p {
 
     86.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .6), 0 0 60px rgba(255, 255, 255, .45), 0 0 110px rgba(255, 255, 255, .25), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     100% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .6), 0 0 60px rgba(255, 255, 255, .45), 0 0 110px rgba(255, 255, 255, .25), 0 0 100px rgba(255, 255, 255, .1)
     }
 }
 
@@ -547,7 +512,6 @@ figure.effect-sadie:hover p {
 
     20.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .25)
     }
 
     20.6% {
@@ -562,12 +526,10 @@ figure.effect-sadie:hover p {
 
     30.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     30.5% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     30.6% {
@@ -582,17 +544,14 @@ figure.effect-sadie:hover p {
 
     45.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     50% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     55% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
     }
 
     55.1% {
@@ -607,12 +566,10 @@ figure.effect-sadie:hover p {
 
     57.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35)
     }
 
     60% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35)
     }
 
     60.1% {
@@ -627,12 +584,10 @@ figure.effect-sadie:hover p {
 
     65.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     75% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     75.1% {
@@ -647,12 +602,10 @@ figure.effect-sadie:hover p {
 
     77.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .4), 0 0 110px rgba(255, 255, 255, .2), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     85% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .4), 0 0 110px rgba(255, 255, 255, .2), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     85.1% {
@@ -667,13 +620,11 @@ figure.effect-sadie:hover p {
 
     86.1% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .6), 0 0 60px rgba(255, 255, 255, .45), 0 0 110px rgba(255, 255, 255, .25), 0 0 100px rgba(255, 255, 255, .1)
     }
 
     100% {
         opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, .6), 0 0 60px rgba(255, 255, 255, .45), 0 0 110px rgba(255, 255, 255, .25), 0 0 100px rgba(255, 255, 255, .1)
     }
 }
 
-/* BRANDNAV */
+/*navbar tub light*/
